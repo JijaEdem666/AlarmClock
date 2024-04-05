@@ -22,8 +22,8 @@ class Watch:
         self.clock_label = tk.Label(self.root, bg="black", fg="white", font=("Times", 30, 'bold'), relief='flat')
         self.clock_label.pack(side=tk.TOP)
 
-        self.root.geometry("600x600")  # Устанавливаем размер окна
-        self.root.resizable(False, False)  # Запрещаем изменять размер окна
+        self.root.geometry("600x600")  
+        self.root.resizable(False, False)  
 
         self.draw_clock()
         self.update_label()
@@ -64,7 +64,7 @@ class Watch:
         self.clock_label.config(text=current_time + "\n" + day_string + "\n" + date_string)
         self.clock_label.after(80, self.update_label)
 
-# Создаем экземпляр класса Tk
+
 root = tk.Tk()
 root.title("Watch App")
 
