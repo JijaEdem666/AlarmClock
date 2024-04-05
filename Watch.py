@@ -3,10 +3,10 @@ from datetime import datetime
 from time import strftime
 import math
 
+
 class Watch:
     def __init__(self, root):
         self.root = root
-        self.root.title("Watch")
 
         self.CLOCK_WIDTH = 400
         self.CLOCK_HEIGHT = 400
@@ -19,11 +19,8 @@ class Watch:
         self.canvas = tk.Canvas(self.root, width=self.CLOCK_WIDTH, height=self.CLOCK_HEIGHT, bg="white")
         self.canvas.pack(side=tk.TOP, pady=self.CLOCK_MARGIN)
 
-        self.clock_label = tk.Label(self.root, bg="black", fg="white", font=("Times", 30, 'bold'), relief='flat')
+        self.clock_label = tk.Label(self.root, bg="black", fg="white", font=("Arial", 30, 'bold'), relief='flat')
         self.clock_label.pack(side=tk.TOP)
-
-        self.root.geometry("600x600")  
-        self.root.resizable(False, False)  
 
         self.draw_clock()
         self.update_label()
@@ -55,19 +52,50 @@ class Watch:
 
         self.canvas.create_oval(self.CLOCK_CENTER_X - 5, self.CLOCK_CENTER_Y - 5, self.CLOCK_CENTER_X + 5, self.CLOCK_CENTER_Y + 5, fill="black")
 
-        self.root.after(1000, self.draw_clock)
+        self.canvas.after(1000, self.draw_clock)
 
     def update_label(self):
         current_time = strftime('%H:%M:%S')
-        day_string = strftime("%A")
-        date_string = strftime("%B %d, %Y")
-        self.clock_label.config(text=current_time + "\n" + day_string + "\n" + date_string)
-        self.clock_label.after(80, self.update_label)
-
-
-root = tk.Tk()
-root.title("Watch App")
-
-watch = Watch(root)
-
-root.mainloop()
+        match strftime("%A"):
+            case "Monday":
+                day_string = "Понедельник"
+            case "Tuesday":
+                day_string = "Вторник"
+            case "Wednesday":
+                day_string = "Среда"
+            case "Thursday":
+                day_string = "Четверг"
+            case "Friday":
+                day_string = "Пятница"
+            case "Saturday":
+                day_string = "Суббота"
+            case "Sunday":
+                day_string = "Воскресенье"
+        match strftime("%B"):
+            case "January":
+                month_string = "Январь"
+            case "February":
+                month_string = "Февраль"
+            case "March":
+                month_string = "Март"
+            case "April":
+                month_string = "Апрель"
+            case "May":
+                month_string = "Май"
+            case "June":
+                month_string = "Июнь"
+            case "July":
+                month_string = "Июль"
+            case "August":
+                month_string = "Август"
+            case "September":
+                month_string = "Сентябрь"
+            case "October":
+                month_string = "Октябрь"
+            case "November":
+                month_string = "Ноябрь"
+            case "December":
+                month_string = "Декабрь"
+        date_string = strftime(" %d, %Y")
+        self.clock_label.config(text=current_time + "\n" + day_string + "\n" + month_string + date_string)
+        self.clock_label.after(1000, self.update_label)
