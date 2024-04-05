@@ -14,10 +14,10 @@ class Watch:
         self.CLOCK_CENTER_Y = self.CLOCK_HEIGHT // 2
         self.CLOCK_RADIUS = min(self.CLOCK_WIDTH, self.CLOCK_HEIGHT) // 2 - 20
 
-        self.CLOCK_MARGIN = 15  # Расстояние между аналоговыми и цифровыми часами
+        self.CLOCK_RAST = 15  # Расстояние между аналоговыми и цифровыми часами
 
         self.canvas = tk.Canvas(self.root, width=self.CLOCK_WIDTH, height=self.CLOCK_HEIGHT, bg="white")
-        self.canvas.pack(side=tk.TOP, pady=self.CLOCK_MARGIN)
+        self.canvas.pack(side=tk.TOP, pady=self.CLOCK_RAST)
 
         self.clock_label = tk.Label(self.root, bg="black", fg="white", font=("Arial", 30, 'bold'), relief='flat')
         self.clock_label.pack(side=tk.TOP)
