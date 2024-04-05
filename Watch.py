@@ -68,8 +68,6 @@ class Watch:
 root = tk.Tk()
 root.title("Watch App")
 
-# Создаем экземпляр класса Watch и передаем в него root
 watch = Watch(root)
 
-# Запускаем приложение
 root.mainloop()
