@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
-from datetime import datetime
 from time import strftime
+from alarm_list import alarm_list
 
 
 class NewAlarm:
@@ -54,14 +54,19 @@ class NewAlarm:
 
             label_event = Label(self.top, text="Название события:")
             label_event.place(x=50, y=100)
-            entry_event = ttk.Entry(self.top, width=50)
+
+            event_name = StringVar()
+            entry_event = ttk.Entry(self.top, width=50, textvariable=event_name)
             entry_event.place(x=50, y=130)
 
-            button_add = Button(self.top, text="Добавить событие", font=("Arial", 11))
+            f = lambda n=event_name, y=year, m=month, d=day: self.add_event(n, y, m, d)
+            button_add = Button(self.top, text="Добавить событие", font=("Arial", 11), command=f)
             button_add.place(x=160, y=160)
-
-
 
         self.top.grab_set()
         self.top.focus_set()
         self.top.wait_window()
+
+    def add_event(self, event_name, year, month, day):
+        alarm_list.append(["event", event_name, year, month, day])
+        self.top.destroy()
