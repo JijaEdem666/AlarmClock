@@ -3,13 +3,17 @@ from PIL import ImageTk, Image
 import random
 from AnimateGifLabel import *
 from pygame import mixer
+from alarm_list import alarm_list
 
 
 
 class Fun:
 
-    def __init__(self, root):
+    def __init__(self, root, i, alarm_menu, type):
+        self.alarm_menu = alarm_menu
+        self.type = type
         self.top = Toplevel(root)
+        self.i = i
         x = self.top.winfo_screenwidth() - 700
         y = (self.top.winfo_screenheight() - 700) / 2
         self.top.wm_geometry("+%d+%d" % (x, y))
@@ -46,6 +50,9 @@ class Fun:
 
     def button_clicked(self):
         mixer.music.stop()
+        if self.type == "event":
+            alarm_list.pop(self.i)
+            self.alarm_menu.update()
         self.top.destroy()
 
 
