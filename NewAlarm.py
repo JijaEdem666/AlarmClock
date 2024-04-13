@@ -113,13 +113,29 @@ class NewAlarm:
         self.top.wait_window()
 
     def add_event(self, event_name, year, month, day):
-        alarm_list.append(["event", event_name, year, month, day])
+        alarm_list.append(["event", event_name.get(), year.get(), month.get(), day.get()])
+        f = open('alarm_list.txt', 'w')
+        for i in alarm_list:
+            for j in range(len(i) - 1):
+                f.write(i[j] + "@@@")
+            f.write(i[-1] + '\n')
         self.top.destroy()
 
     def add_daily(self, hour, minute):
-        alarm_list.append(["daily", hour, minute])
+        alarm_list.append(["daily", hour.get(), minute.get()])
+        f = open('alarm_list.txt', 'w')
+        for i in alarm_list:
+            for j in range(len(i) - 1):
+                f.write(i[j] + "@@@")
+            f.write(i[-1] + '\n')
+        f.close()
         self.top.destroy()
 
     def add_weekly(self, hour, minute, day):
-        alarm_list.append(["weekly", hour, minute, day])
+        alarm_list.append(["weekly", hour.get(), minute.get(), day.get()])
+        f = open('alarm_list.txt', 'w')
+        for i in alarm_list:
+            for j in range(len(i) - 1):
+                f.write(i[j] + "@@@")
+            f.write(i[-1] + '\n')
         self.top.destroy()

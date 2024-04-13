@@ -36,7 +36,7 @@ class AlarmRoot:
             y = 20
             for i in range(len(alarm_list)):
                 if alarm_list[i][0] == "event":
-                    self.canvas.create_text(x, y, text=alarm_list[i][1].get(), anchor=NW, font=("Arial", 10))
+                    self.canvas.create_text(x, y, text=alarm_list[i][1], anchor=NW, font=("Arial", 10))
                     f = lambda x=i: self.delete_alarm(x)
                     btn_del = Button(self.canvas, text="Удалить будильник", font=("Arial", 9), command=f)
                     self.canvas.create_window(x + 420, y-5, anchor=NW, window=btn_del)
@@ -46,8 +46,8 @@ class AlarmRoot:
                 elif alarm_list[i][0] == "daily":
                     self.canvas.create_text(x, y, text="Ежедневный будильник", font=("Arial", 9), anchor=NW)
 
-                    h = alarm_list[i][1].get()
-                    m = alarm_list[i][2].get()
+                    h = alarm_list[i][1]
+                    m = alarm_list[i][2]
                     if (int(h) < 10):
                         h = "0" + h
                     if (int(m) < 10):
@@ -59,7 +59,7 @@ class AlarmRoot:
                     self.canvas.create_window(x + 420, y - 5, anchor=NW, window=btn_del)
                 elif alarm_list[i][0] == "weekly":
                     label_day = ""
-                    match alarm_list[i][3].get():
+                    match alarm_list[i][3]:
                         case "Понедельник":
                             label_day = "Понедельник"
                         case "Вторник":
@@ -76,8 +76,8 @@ class AlarmRoot:
                             label_day = "Воскресенье"
                     self.canvas.create_text(x, y, text="Будильник на " + label_day, font=("Arial", 9), anchor=NW)
 
-                    h = alarm_list[i][1].get()
-                    m = alarm_list[i][2].get()
+                    h = alarm_list[i][1]
+                    m = alarm_list[i][2]
                     if (int(h) < 10):
                         h = "0" + h
                     if (int(m) < 10):
@@ -102,9 +102,9 @@ class AlarmRoot:
         info.title("Информация о будильнике")
         label_event = Label(info, text="Важное событие", font=("Arial", 12))
         label_event.place(x=200, y=20, anchor=N)
-        label_date = Label(info, text="Дата: " + alarm_list[i][4].get() + " " + alarm_list[i][3].get() + " " + alarm_list[i][2].get(), font=("Arial", 10))
+        label_date = Label(info, text="Дата: " + alarm_list[i][4] + " " + alarm_list[i][3] + " " + alarm_list[i][2], font=("Arial", 10))
         label_date.place(x=200, y=100, anchor=N)
-        label_name = Label(info, text=alarm_list[i][1].get(), font=("Arial", 10))
+        label_name = Label(info, text=alarm_list[i][1], font=("Arial", 10))
         label_name.place(x=200, y=60, anchor=N)
         info.grab_set()
         info.focus_set()

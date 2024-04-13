@@ -53,6 +53,11 @@ class Fun:
         if self.type == "event":
             alarm_list.pop(self.i)
             self.alarm_menu.update()
+        f = open('alarm_list.txt', 'w')
+        for i in alarm_list:
+            for j in range(len(i) - 1):
+                f.write(i[j] + "@@@")
+            f.write(i[-1] + '\n')
         self.top.destroy()
 
 

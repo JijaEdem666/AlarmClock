@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="535b939a-f73e-4e97-85ba-d8571eabe28e" name="Changes" comment="class MainRoot">
-      <change afterPath="$PROJECT_DIR$/alarm_list.py" afterDir="false" />
+    <list default="true" id="535b939a-f73e-4e97-85ba-d8571eabe28e" name="Changes" comment="Типа всё готово">
+      <change afterPath="$PROJECT_DIR$/alarm_list.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlarmRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlarmRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainRoot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewAlarm.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewAlarm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,12 +80,30 @@
       <option name="project" value="LOCAL" />
       <updated>1712077415953</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Добавление важного события">
+      <option name="closed" value="true" />
+      <created>1712399519621</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712399519621</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Типа всё готово">
+      <option name="closed" value="true" />
+      <created>1712603630747</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712603630747</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="main file" />
     <MESSAGE value="class MainRoot" />
-    <option name="LAST_COMMIT_MESSAGE" value="class MainRoot" />
+    <MESSAGE value="Добавление важного события" />
+    <MESSAGE value="Типа всё готово" />
+    <option name="LAST_COMMIT_MESSAGE" value="Типа всё готово" />
   </component>
 </project>

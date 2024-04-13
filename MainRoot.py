@@ -11,6 +11,12 @@ class MainRoot:
     def __init__(self):
         self.root = Tk()
         self.alarm_menu = None
+
+        file = open('alarm_list.txt', 'r')
+        for i in file:
+            mas = i.split("@@@")
+            alarm_list.append(mas)
+
         x = 0
         y = (self.root.winfo_screenheight() - 700) / 2
         self.root.wm_geometry("+%d+%d" % (x, y))
@@ -60,10 +66,10 @@ class MainRoot:
                         month_string = "Ноябрь"
                     case "December":
                         month_string = "Декабрь"
-                if (strftime("%Y") == alarm_list[i][2].get()) & (month_string == alarm_list[i][3].get()) & (str(int(strftime("%d"))) == alarm_list[i][4].get()):
+                if (strftime("%Y") == alarm_list[i][2]) & (month_string == alarm_list[i][3]) & (str(int(strftime("%d"))) == alarm_list[i][4]):
                     fun = Fun(self.root, i, self.alarm_menu, "event")
             elif alarm_list[i][0] == "daily":
-                if (str(int(strftime("%H"))) == alarm_list[i][1].get()) & (str(int(strftime("%M"))) == alarm_list[i][2].get()) & (str(int(strftime("%S"))) == "0"):
+                if (str(int(strftime("%H"))) == alarm_list[i][1]) & (str(int(strftime("%M"))) == alarm_list[i][2]) & (str(int(strftime("%S"))) == "0"):
                     fun = Fun(self.root, i, self.alarm_menu, "daily")
             elif alarm_list[i][0] == "weekly":
                 day = ""
@@ -82,8 +88,8 @@ class MainRoot:
                         day = "Saturday"
                     case "Воскресенье":
                         day = "Sunday"
-                if (str(int(strftime("%H"))) == alarm_list[i][1].get()) & (
-                        str(int(strftime("%M"))) == alarm_list[i][2].get()) & (str(int(strftime("%S"))) == "0") & (strftime("%A") == day):
+                if (str(int(strftime("%H"))) == alarm_list[i][1]) & (
+                        str(int(strftime("%M"))) == alarm_list[i][2]) & (str(int(strftime("%S"))) == "0") & (strftime("%A") == day):
                     fun = Fun(self.root, i, self.alarm_menu, "weekly")
 
         self.root.after(1000, self.check_alarms)
