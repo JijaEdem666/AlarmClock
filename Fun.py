@@ -18,6 +18,9 @@ class Fun:
         y = (self.top.winfo_screenheight() - 700) / 2
         self.top.wm_geometry("+%d+%d" % (x, y))
         self.top.title("WAKE UP")
+        if alarm_list[i][0] == "event":
+            self.top.title(alarm_list[i][1])
+
 
         imageList = ["gifs/gif_1.gif",
                      "gifs/gif_2.gif",
